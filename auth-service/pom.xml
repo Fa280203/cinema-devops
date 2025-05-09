@@ -1,19 +1,76 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>com.votreorg.cinema</groupId>
-        <artifactId>cinema-rest-microservices</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-
-    <artifactId>auth-service</artifactId>
-    <packaging>war</packaging>
-
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.votreorg.cinema</groupId>
+    <artifactId>cinema-rest-microservices</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>com.votreorg.cinema</groupId>
+  <artifactId>auth-service</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>auth-service</name>
+  <properties>
+    <jersey.version>2.41</jersey.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <war.mvn.plugin.version>3.4.0</war.mvn.plugin.version>
+  </properties>
+  <dependencyManagement>
     <dependencies>
-        <!-- JAX-RS, Jackson, JWT, driver MySQL, etc. -->
+      <dependency>
+        <groupId>org.glassfish.jersey</groupId>
+        <artifactId>jersey-bom</artifactId>
+        <version>${jersey.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>auth-service</finalName>
+
+    <plugins>
+
+      <!-- Compilateur Java (mets Java 11 si possible) -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>11</source>     <!-- 1.8 → 11 conseillé -->
+          <target>11</target>
+        </configuration>
+      </plugin>
+
+      <!-- Packaging WAR -->
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${war.mvn.plugin.version}</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <path>/auth-service</path>   <!-- contexte d’URL -->
+          <port>8090</port>            <!-- change si besoin -->
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+
 </project>

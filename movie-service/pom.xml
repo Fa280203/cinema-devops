@@ -60,7 +60,7 @@
         <version>2.2</version>
         <configuration>
           <path>/cinema-service</path>   <!-- adapte au module -->
-          <port>8093</port>              <!-- change le port -->
+          <port>8092</port>              <!-- change le port -->
         </configuration>
       </plugin>
     </plugins>

@@ -1,28 +1,43 @@
 package com.votreorg.cinema.auth.util;
 
+import org.mindrot.jbcrypt.BCrypt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+
+import java.security.Key;
+import javax.crypto.spec.SecretKeySpec;
 import java.util.Date;
+import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.SignatureAlgorithm;
+import java.security.Key;
+
 
 public class JwtUtil {
-    private static final String SECRET_KEY = "ChangeThisSecretKey";
-    private static final long EXPIRATION_MS = 3600_000; // 1h
+    private static final Key KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    private static final long TTL_MS = 3600_000; // 1 h
 
-    public static String issueToken(String username) {
+    public static String hashPassword(String plain) {
+        return BCrypt.hashpw(plain, BCrypt.gensalt());
+    }
+
+    public static boolean verifyPassword(String plain, String hash) {
+        return BCrypt.checkpw(plain, hash);
+    }
+
+    public static String issueToken(String subject) {
         long now = System.currentTimeMillis();
         return Jwts.builder()
-                .setSubject(username)
+                .setSubject(subject)
                 .setIssuedAt(new Date(now))
-                .setExpiration(new Date(now + EXPIRATION_MS))
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .setExpiration(new Date(now + TTL_MS))
+                .signWith(KEY)
                 .compact();
     }
 
-    public static String validateToken(String token) {
-        return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
+    public static void validateToken(String token) {
+        Jwts.parserBuilder()
+                .setSigningKey(KEY)
+                .build()
+                .parseClaimsJws(token);
     }
 }

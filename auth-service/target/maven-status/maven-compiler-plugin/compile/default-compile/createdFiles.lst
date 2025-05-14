@@ -1,1 +1,11 @@
+com/votreorg/cinema/auth/util/JPAUtil.class
+com/votreorg/cinema/auth/dao/UserDao.class
+com/votreorg/cinema/auth/dto/UserDTO.class
 com/votreorg/cinema/auth/MyResource.class
+com/votreorg/cinema/auth/dto/Credentials.class
+com/votreorg/cinema/auth/dto/TokenResponse.class
+com/votreorg/cinema/auth/controller/AuthResource.class
+com/votreorg/cinema/auth/entity/User.class
+com/votreorg/cinema/auth/util/JwtUtil.class
+com/votreorg/cinema/auth/util/JacksonConfig.class
+com/votreorg/cinema/auth/entity/Role.class

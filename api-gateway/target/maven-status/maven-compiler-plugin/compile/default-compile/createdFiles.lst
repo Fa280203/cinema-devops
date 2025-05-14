@@ -1,0 +1,9 @@
+com/votreorg/cinema/gateway/MyResource.class
+com/votreorg/cinema/gateway/dto/Credentials.class
+com/votreorg/cinema/gateway/GatewayApplication.class
+com/votreorg/cinema/gateway/filter/JwtAuthFilter.class
+com/votreorg/cinema/gateway/util/JwtUtil.class
+com/votreorg/cinema/gateway/resource/AuthProxyResource.class
+com/votreorg/cinema/gateway/config/ObjectMapperProvider.class
+com/votreorg/cinema/gateway/util/JacksonConfig.class
+com/votreorg/cinema/gateway/util/ClientUtil.class

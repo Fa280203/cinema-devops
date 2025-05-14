@@ -1,5 +1,10 @@
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/dto/Credentials.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/resource/AuthProxyResource.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/util/JwtUtil.java
 /Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/util/ClientUtil.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/util/JacksonConfig.java
 /Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/resource/CinemaProxyResource.java
 /Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/GatewayApplication.java
 /Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/MyResource.java
 /Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/filter/JwtAuthFilter.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/api-gateway/src/main/java/com/votreorg/cinema/gateway/config/ObjectMapperProvider.java

@@ -11,5 +11,6 @@ public class GatewayApplication extends ResourceConfig {
         packages("com.votreorg.cinema.gateway");
         register(JacksonFeature.class);
         register(JwtAuthFilter.class);
+        register(com.votreorg.cinema.gateway.util.JacksonConfig.class);
     }
 }

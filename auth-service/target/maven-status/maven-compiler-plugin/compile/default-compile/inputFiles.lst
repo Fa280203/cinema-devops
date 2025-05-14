@@ -1,1 +1,11 @@
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/dto/Credentials.java
 /Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/MyResource.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/controller/AuthResource.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/util/JPAUtil.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/util/JacksonConfig.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/dto/UserDTO.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/util/JwtUtil.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/entity/User.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/dto/TokenResponse.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/entity/Role.java
+/Users/abchatealiibrahim/IdeaProjects/cinema-rest-microservices/auth-service/src/main/java/com/votreorg/cinema/auth/dao/UserDao.java

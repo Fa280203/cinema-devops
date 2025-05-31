@@ -1,4 +1,4 @@
-name: CI/CD - Build and Dockerize
+name: CI/CD - Build all microservices with Docker
 
 on:
   push:
@@ -7,13 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-dockerize:
+  build-microservices:
     runs-on: ubuntu-latest
-
-    services:
-      docker:
-        image: docker:20.10.16
-        options: --privileged
 
     steps:
       - name: 📥 Checkout code
@@ -25,16 +20,11 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: 🔨 Build with Maven
-        run: mvn -B clean package -DskipTests
+      - name: 🔨 Maven Build (skip tests)
+        run: mvn clean package -DskipTests
 
-      - name: 🐳 Build Docker image
-        run: docker build -t cinema-app .
+      - name: 🐳 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      # Optionnel : push vers GitHub Container Registry
-      # - name: 🔐 Login to GitHub Container Registry
-      #   run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-      # - name: 📤 Push Docker image
-      #   run: docker tag cinema-app ghcr.io/${{ github.repository_owner }}/cinema-app:latest &&
-      #        docker push ghcr.io/${{ github.repository_owner }}/cinema-app:latest
+      - name: 🔧 Build all services with Docker Compose
+        run: docker compose build
